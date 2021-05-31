@@ -1,13 +1,15 @@
 from flask import Flask, render_template, request, send_from_directory
 
+from  .forms import CommentForm
 
 app = Flask(__name__)
 app.config.from_object('project.config.Config')
 
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def home():
-    return render_template("home.html")
+    comment_form = CommentForm(request.form)
+    return render_template("home.html", form=comment_form)
 
 
 @app.route("/static/<path:filename>")
