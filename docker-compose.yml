@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./services/web
+    image: easyflask:latest
+    container_name: easyflask
+    environment:
+      FLASK_APP: project/app.py
+      FLASK_ENV: development
+    command: ["./scripts/command-dev.sh"]
+    volumes:
+    - ./services/web/project:/home/admin/app/project
+    - ./services/web/manage.py:/usr/src/app/manage.py
+    ports:
+    - 5010:5000
