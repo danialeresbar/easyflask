@@ -1,4 +1,4 @@
-# Last update: Gunicorn added
+# Last update: WTForms added
 
 # A lightweight WSGI web application framework
 Flask==2.0.0
@@ -11,3 +11,6 @@ gunicorn==20.0.4
 
 # PostgreSQL python client
 # psycopg2-binary==2.8.6
+
+# Flexible forms validation and rendering library
+WTForms==2.3.3
