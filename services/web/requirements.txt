@@ -1,5 +1,7 @@
 # Last update: added Flask-Migrate package
 
+cryptography==3.4.7
+
 # A lightweight WSGI web application framework
 Flask==2.0.0
 
@@ -15,5 +17,5 @@ Flask-WTF==0.15.1
 # Python WSGI HTTP Server
 gunicorn==20.0.4
 
-# Pure-Python MySQL client library,
+# Pure-Python MySQL client library
 PyMySQL==1.0.2
