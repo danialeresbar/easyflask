@@ -6,11 +6,11 @@ Flask==2.0.0
 # An extension for Flask that adds support for SQLAlchemy
 Flask-SQLAlchemy==2.5.1
 
+# Simple integration of Flask and WTForms, including CSRF, file upload, and reCAPTCHA
+Flask-WTF==0.15.1
+
 # Python WSGI HTTP Server
 gunicorn==20.0.4
 
 # PostgreSQL python client
 # psycopg2-binary==2.8.6
-
-# Simple integration of Flask and WTForms, including CSRF, file upload, and reCAPTCHA
-WTForms==2.3.3
