@@ -7,5 +7,5 @@ init_db:
 generate_migration:
 	docker exec -it easyflask flask db migrate
 
-apply_migration:
+apply_migrations:
 	docker exec -it easyflask flask db upgrade
