@@ -1,7 +1,10 @@
-# Last update: Flask-WTF include instead raw WTForms
+# Last update: added Flask-Migrate package
 
 # A lightweight WSGI web application framework
 Flask==2.0.0
+
+# SQLAlchemy database migrations for Flask applications using Alembic
+Flask-Migrate==3.0.1
 
 # An extension for Flask that adds support for SQLAlchemy
 Flask-SQLAlchemy==2.5.1
