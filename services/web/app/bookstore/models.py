@@ -1,5 +1,5 @@
 from datetime import datetime
-from ..app import database
+from app import db
 
 
 AUTHOR_NAME = 'First name'
@@ -12,27 +12,33 @@ BOOK_YEAR = 'Publication year'
 BOOK_ISBN = 'ISBN'
 
 
-class Author(database.Model):
+class Author(db.Model):
     """
 
     """
 
-    id = database.Column(database.Integer, primary_key=True)
-    name = database.Column(AUTHOR_NAME, database.String(64))
-    last_name = database.Column(AUTHOR_LAST_NAME, database.String(64))
-    birthday = database.Column(AUTHOR_BIRTHDAY, database.DateTime, default=datetime.now)
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(AUTHOR_NAME, db.String(64))
+    last_name = db.Column(AUTHOR_LAST_NAME, db.String(64))
+    birthday = db.Column(AUTHOR_BIRTHDAY, db.DateTime, default=datetime.now)
+
+    def __init__(self, id, name, last_name, birthday):
+        self.id = id
+        self.name = name
+        self.last_name = last_name
+        self.birthday = birthday
 
     def get_full_name(self):
         return f'{self.name} {self.last_name}'
 
 
-class Book(database.Model):
+class Book(db.Model):
     """
 
     """
 
-    id = database.Column(database.Integer, primary_key=True)
-    title = database.Column(BOOK_TITLE, database.String(128))
-    price = database.Column(BOOK_PRICE, database.Float)
-    isbn = database.Column(BOOK_ISBN, database.Integer, unique=True)
-    year = database.Column(BOOK_YEAR, database.DateTime, nullable=True)
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(BOOK_TITLE, db.String(128))
+    price = db.Column(BOOK_PRICE, db.Float)
+    isbn = db.Column(BOOK_ISBN, db.Integer, unique=True)
+    year = db.Column(BOOK_YEAR, db.DateTime, nullable=True)
