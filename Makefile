@@ -4,8 +4,8 @@ bash:
 init_db:
 	docker exec -it easyflask flask db init
 
-generate_migrate:
-	docker exec -it easyflask flask db migrate -m "Initial migration"
+generate_migration:
+	docker exec -it easyflask flask db migrate
 
-apply_migrate:
+apply_migration:
 	docker exec -it easyflask flask db upgrade
