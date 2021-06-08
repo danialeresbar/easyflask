@@ -1,4 +1,4 @@
-# Last update: WTForms added
+# Last update: Flask-WTF include instead raw WTForms
 
 # A lightweight WSGI web application framework
 Flask==2.0.0
@@ -12,5 +12,5 @@ gunicorn==20.0.4
 # PostgreSQL python client
 # psycopg2-binary==2.8.6
 
-# Flexible forms validation and rendering library
+# Simple integration of Flask and WTForms, including CSRF, file upload, and reCAPTCHA
 WTForms==2.3.3
