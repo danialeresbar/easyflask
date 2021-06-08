@@ -1,28 +1,20 @@
 import os
 from flask import Flask, render_template, request, send_from_directory
 
-from  .forms import CommentForm
 
 app = Flask(__name__)
-environment = os.environ.get('ENVIRONMENT', 'development')
+environment = os.environ.get('FLASK_ENV', 'development')
 app.config.from_object('project.settings.{}'.format(environment))
 
 
 @app.route("/", methods=["GET", "POST"])
 def home():
-    comment_form = CommentForm(request.form)
-    return render_template("home.html", form=comment_form)
+    return render_template("home.html")
 
 
 @app.route("/static/<path:filename>")
 def staticfiles(filename):
     return send_from_directory(app.config["STATIC_FOLDER"], filename)
-
-
-@app.route("/client")
-def client():
-    client_list = ['Daniel', 'Juanita', 'Francisco']
-    return render_template("client.html", clients=client_list)
 
 
 if __name__ == '__main__':
