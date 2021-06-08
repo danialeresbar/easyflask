@@ -15,5 +15,5 @@ Flask-WTF==0.15.1
 # Python WSGI HTTP Server
 gunicorn==20.0.4
 
-# MariaDB Connector/Python
-mariadb==1.0.7
+# Pure-Python MySQL client library,
+PyMySQL==1.0.2
