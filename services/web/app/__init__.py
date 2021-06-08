@@ -19,7 +19,7 @@ migrate = Migrate()
 
 def create_app():
     """
-    Application-factory pattern
+    Application-factory pattern for app init
     :return: The flask app instance
     """
 
@@ -30,7 +30,7 @@ def create_app():
     environment = os.environ.get('FLASK_ENV', 'development')
     app.config.from_object('app.settings.{}'.format(environment))
 
-    # ensure the instance folder exists
+    # Ensure the instance folder exists
     try:
         os.makedirs(app.instance_path)
     except OSError:
