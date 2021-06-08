@@ -15,5 +15,5 @@ Flask-WTF==0.15.1
 # Python WSGI HTTP Server
 gunicorn==20.0.4
 
-# PostgreSQL python client
-# psycopg2-binary==2.8.6
+# MariaDB Connector/Python
+mariadb==1.0.7
