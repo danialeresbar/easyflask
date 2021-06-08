@@ -1,9 +1,11 @@
+import os
 from flask import Flask, render_template, request, send_from_directory
 
 from  .forms import CommentForm
 
 app = Flask(__name__)
-app.config.from_object('project.config.Config')
+environment = os.environ.get('ENVIRONMENT', 'development')
+app.config.from_object('project.settings.{}'.format(environment))
 
 
 @app.route("/", methods=["GET", "POST"])
