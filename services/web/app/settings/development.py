@@ -1,7 +1,9 @@
 from .common import *
 
-
+# Statement for enabling the development environment
 DEBUG = True
+
+# Secret key for signing cookies
 SECRET_KEY = "flaskn4%(+ftkg6-r3jl585^542-4&i(f8n*iw(p__v^o8xc^m@2qlckey"
 
 # Database

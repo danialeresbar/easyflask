@@ -6,14 +6,15 @@ services:
     image: easyflask:latest
     container_name: easyflask
     environment:
-      FLASK_APP: project/app.py
+      FLASK_APP: app
       FLASK_ENV: development
     depends_on:
       - database
     command: ["./scripts/wait-for-it.sh", "database:3306", "--", "./scripts/command-dev.sh"]
     volumes:
-    - ./services/web/project:/home/admin/app/project
-    - ./services/web/manage.py:/usr/src/app/manage.py
+    - ./services/web/app:/home/admin/easyflask/app/
+    - ./services/web/manage.py:/home/admin/easyflask/manage.py
+    - ./services/web/scripts:/home/admin/easyflask/scripts
     ports:
     - 5010:5000
 

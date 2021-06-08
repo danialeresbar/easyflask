@@ -43,10 +43,10 @@ COPY --from=builder --chown=admin /home/appbuilder/.local $USER_HOME/.local
 ENV PATH=$USER_HOME/.local/bin:$PATH
 
 # Setup workdir
-RUN mkdir app
-WORKDIR $USER_HOME/app
+RUN mkdir easyflask
+WORKDIR $USER_HOME/easyflask
 
 # Copy project files
-COPY --chown=admin project/ project/
+COPY --chown=admin app/ app/
 COPY --chown=admin manage.py manage.py
 COPY --chown=admin scripts/ scripts/
