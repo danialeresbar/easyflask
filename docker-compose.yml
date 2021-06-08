@@ -14,3 +14,13 @@ services:
     - ./services/web/manage.py:/usr/src/app/manage.py
     ports:
     - 5010:5000
+
+  database:
+    image: mariadb:10.2-bionic
+    container_name: easyflask-mariadb
+    environment:
+      MARIADB_DATABASE: easyflask
+      MARIADB_USER: flaskuser
+      MARIADB_PASSWORD: mariadb
+    ports:
+      - 3306:3306
