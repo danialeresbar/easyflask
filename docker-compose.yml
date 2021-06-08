@@ -10,7 +10,7 @@ services:
       FLASK_ENV: development
     depends_on:
       - database
-    command: ["./scripts/command-dev.sh"]
+    command: ["./scripts/wait-for-it.sh", "database:3306", "--", "./scripts/command-dev.sh"]
     volumes:
     - ./services/web/project:/home/admin/app/project
     - ./services/web/manage.py:/usr/src/app/manage.py
