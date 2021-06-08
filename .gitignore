@@ -128,3 +128,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Static files exceptions
+!services/web/project/static/js/dist
