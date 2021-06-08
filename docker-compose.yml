@@ -8,6 +8,8 @@ services:
     environment:
       FLASK_APP: project/app.py
       FLASK_ENV: development
+    depends_on:
+      - database
     command: ["./scripts/command-dev.sh"]
     volumes:
     - ./services/web/project:/home/admin/app/project
@@ -19,6 +21,7 @@ services:
     image: mariadb:10.2-bionic
     container_name: easyflask-mariadb
     environment:
+      MARIADB_ROOT_PASSWORD: root
       MARIADB_DATABASE: easyflask
       MARIADB_USER: flaskuser
       MARIADB_PASSWORD: mariadb
