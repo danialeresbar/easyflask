@@ -3,22 +3,7 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    <h1>Hi Flask master!</h1>
-    {% from 'macros/_macro.html' import render_field %}
-    <form name="sentMessage" id="contactForm" method="post">
-        <div class="row">
-            {{ render_field(form.username, class='form-control') }}
-            <p class="text-danger"></p>
-        </div>
-        <div class="row">
-            {{ render_field(form.email, class='form-control') }}
-            <p class="text-danger"></p>
-        </div>
-        <div class="row">
-            {{ render_field(form.comment, class='form-control') }}
-            <p class="text-danger"></p>
-        </div>
-        <br>
-        <button type="submit" class="btn btn-primary">Send</button>
-    </form>
+    <div class="container py-5">
+        <h1>Hi Flask master!</h1>
+    </div>
 {% endblock %}
