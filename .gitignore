@@ -130,4 +130,4 @@ dmypy.json
 .pyre/
 
 # Static files exceptions
-!services/web/project/static/js/dist
+!services/web/app/static/js/dist
