@@ -12,6 +12,11 @@ def home():
     return render_template("home.html")
 
 
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('errors/404.html')
+
+
 @app.route("/static/<path:filename>")
 def staticfiles(filename):
     return send_from_directory(app.config["STATIC_FOLDER"], filename)
