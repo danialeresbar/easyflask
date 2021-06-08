@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, request, send_from_directory
+from flask import Flask, render_template, send_from_directory
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf.csrf import CSRFProtect
