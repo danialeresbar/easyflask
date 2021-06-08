@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 # Flask app settings module
 environment = os.environ.get('FLASK_ENV', 'development')
-app.config.from_object('project.settings.{}'.format(environment))
+app.config.from_object('app.settings.{}'.format(environment))
 
 csrf.init_app(app)
 
@@ -26,7 +26,7 @@ migrate = Migrate(app, db)
 
 # Sample HTTP error handling
 @app.errorhandler(404)
-def page_not_found():
+def page_not_found(error):
     return render_template('errors/404.html')
 
 
