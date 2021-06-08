@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-3 m-auto align-items-center">
+                <img src="{{ url_for('static', filename='img/auth/login.svg') }}" alt="login">
+            </div>
+            <div class="col-md-12 m-auto align-items-center">
+                <!-- Begin login form -->
+                <form method="post" role="form">
+                    {{ form.csrf_token }}
+                    <h1 class="h1 text-center">Welcome!</h1>
+                </form>
+                <!-- End login form -->
+            </div>
+        </div>
+    </div>
+{% endblock %}
