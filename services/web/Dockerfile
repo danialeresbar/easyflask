@@ -10,6 +10,7 @@ ENV PYTHONUNBUFFERED 1
 RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc \
     netcat \
+    libmariadb-dev \
     python3-dev
 
 # Create user for building and installing pip packages inside its home for security purposes

@@ -12,19 +12,22 @@ services:
       - database
     command: ["./scripts/wait-for-it.sh", "database:3306", "--", "./scripts/command-dev.sh"]
     volumes:
-    - ./services/web/app:/home/admin/easyflask/app/
+    - ./services/web/app:/home/admin/easyflask/app
+    - ./services/web/app/migrations:/home/admin/easyflask/migrations
     - ./services/web/manage.py:/home/admin/easyflask/manage.py
     - ./services/web/scripts:/home/admin/easyflask/scripts
     ports:
     - 5010:5000
 
   database:
-    image: mariadb:10.2-bionic
-    container_name: easyflask-mariadb
+    image: mysql
+    container_name: easyflask-mysql
+    cap_add:
+      - SYS_NICE
     environment:
-      MARIADB_ROOT_PASSWORD: root
-      MARIADB_DATABASE: easyflask
-      MARIADB_USER: flaskuser
-      MARIADB_PASSWORD: mariadb
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: easyflask
+      MYSQL_USER: flaskuser
+      MYSQL_PASSWORD: mysql
     ports:
       - 3306:3306
